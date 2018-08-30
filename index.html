@@ -2,24 +2,49 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Vue JS</title>
+<title>Vue Test Project</title>
+<link rel="stylesheet" type="text/css" href="style.css">
 </head>
 
 <body>
 
 <div id="app">
-	<div class="product-image" style="width:25%; float:left">
+	<div class="product-image" style="width:50%; float:left">
 		<a v-bind:href="href"><img v-bind:width="width" v-bind:height="height" v-bind:src="image"></a>
 	</div>
-	<div class="product-details" style="width:25%; float:left">
+	<div class="product-details" style="width:50%; float:left">
 		<h1>{{ product }}</h1>
 		<p>{{ cdesc }}</p>
+
+		<!-- Start Conditional Rendering -->
 		<p v-if="inventory > 10">In Stock</p>
 		<p v-else-if="inventory < 10 && inventory > 0">Almost out of Stock!</p>
 		<p v-else>Out of Stock</p>
-		<ul>
+		<!-- End Conditional Rendering -->
+
+		<!-- Start List Rendering -->
+		<ul class="ullist1">
 			<li v-for="detail in details">{{ detail }}</li>
 		</ul>
+		<div class="variantClass">
+			<p>
+				<ul class="ullist2">
+					<span>Color: </span>
+					<li v-on:mouseover="updateProduct(variant.vImage)" v-for="variant in variants" :key="variant.variantId" style="display:inline-block;">{{ variant.vColor }} </li>
+				</ul>
+			</p>
+		</div>
+		<!-- End List Rendering -->
+
+		<!-- Event Handling -->
+		<div class="cartClass">
+			<p><button v-on:click="cart += 1">Add To Cart</button>
+			<span>Qty. ({{cart}})</span>
+			<span><button :disabled="cart == 0" v-on:click="addToCartMinus" style="padding:3px 5px"> - </button></span>
+			<span><button v-on:click="addToCartPlus" style="padding:3px 5px"> + </button></span>
+			</p>
+		</div>
+		<!-- Event Handling -->
 	</div>
 </div>
 

@@ -1,0 +1,13 @@
+.ullist2{
+	padding-left:0px !important;
+	list-style:none;
+}
+.ullist2 li{
+	display:inline-block;
+	margin-right:10px;
+}
+button{
+	background:#ccc !important;
+	border-radius:5px !important;
+	padding:10px 20px !important; 
+}
