@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Vue - Display Detail</title>
+</head>
+
+<body>
+
+<div id="app">
+	<div class="product-image" style="width:25%; float:left">
+		<a v-bind:href="href"><img v-bind:width="width" v-bind:height="height" v-bind:src="image"></a>
+	</div>
+	<div class="product-details" style="width:25%; float:left">
+		<h1>{{ product }}</h1>
+		<p>{{ cdesc }}</p>
+		<p v-if="inventory > 10">In Stock</p>
+		<p v-else-if="inventory < 10 && inventory > 0">Almost out of Stock!</p>
+		<p v-else>Out of Stock</p>
+		<ul>
+			<li v-for="detail in details">{{ detail  }}</li>
+		</ul>
+	</div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/vue@2.5.17/dist/vue.js"></script>
+<script src="main.js"></script>
+</body>
+
+</html>
