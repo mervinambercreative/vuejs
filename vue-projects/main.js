@@ -7,7 +7,23 @@ var app = new Vue({
 		href: 'http://www.yahoo.com',
 		width: '250px',
 		height: '250px',
-		details: ["80% cotton", "20% polyester", "Gender-neutral"],
-		inventory: 9
+		inventory: 9,
+		details: ["80% cotton", "20% polyester", "Gender-neutral"]
 	}
+
+	variants:{
+		[
+			{
+				variantId:2234,
+				variantColor: "green"
+			}
+			{
+				variantId:2235,
+				variantColor: "blue"
+			}
+		]
+	}
+
+	// Event Handling
+	cart: 0
 })

@@ -14,12 +14,28 @@
 	<div class="product-details" style="width:25%; float:left">
 		<h1>{{ product }}</h1>
 		<p>{{ cdesc }}</p>
+
+		<!-- Start Conditional Rendering -->
 		<p v-if="inventory > 10">In Stock</p>
 		<p v-else-if="inventory < 10 && inventory > 0">Almost out of Stock!</p>
 		<p v-else>Out of Stock</p>
+		<!-- End Conditional Rendering -->
+
+		<!-- Start List Rendering -->
 		<ul>
 			<li v-for="detail in details">{{ detail }}</li>
 		</ul>
+		<div v-for="variant in variants" :key="variant.variantId">
+			<p>{{ variant.variantColor }}</p>
+		</div>
+		<!-- End List Rendering -->
+
+		<!-- Event Handling -->
+		<button v-on="addToCart">Add To Cart</button>
+		<div class="cart">
+			<p>Cart ({{cart}})</p>
+		</div>
+		<!-- Event Handling -->
 	</div>
 </div>
 
