@@ -2,7 +2,7 @@ var app = new Vue({
 	el: '#app',
 	data: {
 		product: 'Socks',
-		image: 'images/socks-red.jpg',
+		image: 'socks-red.jpg',
 		cdesc: '3 Socks',
 		href: 'http://www.yahoo.com',
 		width: '250px',
@@ -12,12 +12,12 @@ var app = new Vue({
 			{
 				variantId: 2234,
 				vColor: "Red",
-				vImage: 'images/socks-red.jpg'
+				vImage: 'socks-red.jpg'
 			},
 			{
 				variantId: 2235,
 				vColor: "Blue",
-				vImage: 'images/socks-blue.jpg'
+				vImage: 'socks-blue.jpg'
 			}
 		],
 		inventory: 9,
