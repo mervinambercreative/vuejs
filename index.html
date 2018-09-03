@@ -3,17 +3,17 @@
 <head>
 <meta charset="UTF-8">
 <title>Vue Test Project</title>
-<link rel="stylesheet" type="text/css" href="style.css">
+<link rel="stylesheet" type="text/css" href="http://localhost:8888/vue/style.css">
 </head>
 
 <body>
 
 <div id="app">
-	<div class="product-image" style="width:50%; float:left">
+	<div class="product-image">
 		<a v-bind:href="href"><img v-bind:width="width" v-bind:height="height" v-bind:src="image"></a>
 	</div>
-	<div class="product-details" style="width:50%; float:left">
-		<h1>{{ product }}</h1>
+	<div class="product-details">
+		<h1>{{ brandName }} {{ product }}</h1>
 		<p>{{ cdesc }}</p>
 
 		<!-- Start Conditional Rendering -->
@@ -30,7 +30,11 @@
 			<p>
 				<ul class="ullist2">
 					<span>Color: </span>
-					<li v-on:mouseover="updateProduct(variant.vImage)" v-for="variant in variants" :key="variant.variantId" style="display:inline-block;">{{ variant.vColor }} </li>
+					<li v-for="variant in variants" 
+					:key="variant.variantId"
+					class="colorBox"
+					:style="{backgroundColor:variant.vColor}"
+					v-on:mouseover="updateProduct(variant.vImage)">&nbsp;&nbsp;&nbsp;</li>
 				</ul>
 			</p>
 		</div>

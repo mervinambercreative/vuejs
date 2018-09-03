@@ -2,6 +2,7 @@ var app = new Vue({
 	el: '#app',
 	data: {
 		product: 'Socks',
+		brandName: 'Burlington',
 		image: 'socks-red.jpg',
 		cdesc: '3 Socks',
 		href: 'http://www.yahoo.com',

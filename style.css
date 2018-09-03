@@ -1,13 +1,26 @@
+body{
+	padding: 20px;
+}
 .ullist2{
 	padding-left:0px !important;
 	list-style:none;
 }
-.ullist2 li{
-	display:inline-block;
-	margin-right:10px;
+.product-image, .product-details{
+	float:left;
+}
+.product-image{
+	border:1px solid #ccc;
+	margin-right: 40px;
+	padding:20px;
 }
 button{
 	background:#ccc !important;
 	border-radius:5px !important;
 	padding:10px 20px !important; 
+}
+.colorBox{
+	width:40px !important;
+	height: 40px !important;
+	display:inline-block !important;
+	margin-right:10px !important;
 }
